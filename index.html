@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotspots Map</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+    <style>
+        body, html { height: 100%; margin: 0; font-family: Arial, sans-serif; }
+        #map { position: absolute; top: 0; bottom: 0; left: 500px; width: calc(100% - 500px); background-color: #191A1A;}
+        #sidebar { width: 500px; background-color: #2C2C2C; position: absolute; top: 0; bottom: 0; left: 0; overflow: auto; z-index: 2; box-shadow: 2px 0px 10px rgba(0,0,0,0.5);}
+        #sidebar h4 { padding: 20px; background-color: #4CAF50; color: #FFF; margin: 0; }
+        #sidebar .counter { padding: 10px 20px; background-color: #3C3C3C; border-bottom: 1px solid #444; font-size: 14px; color: #ddd; }
+        #sidebar a { color: #4CAF50; text-decoration: none; }  /* Style for the links in sidebar */
+        #sidebar a:hover { text-decoration: underline; }  /* Hover effect for the links in sidebar */
+        #sidebar table, #sidebar th, #sidebar td { border-color: #444; color: #ddd; }
+    </style>
+
+</head>
+<body>
+    <div id="sidebar">
+        <h4>Hotspots</h4>
+        <div class="counter">Total Hotspots: 54</div>
+        <table border="1" cellspacing="0" cellpadding="5" width="100%">
+            <thead>
+                <tr><th>Name</th><th>Location Name</th><th>Height</th><th>Cost</th></tr>
+            </thead>
+            <tbody>
+
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.45445964083738, 4.635939364001738, 15); return false;">Cheesy Jade unicorn</a></td>
+        <td>Minister van Houtenlaan 123, Velsen Zuid NO</td>
+        <td>40m</td>
+        <td>25.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.78232557925122, 4.808910514421889, 15); return false;">decent pear ant</a></td>
+        <td>Grotewallerweg 2B, Schagen</td>
+        <td>15m </td>
+        <td>30.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(53.21419657665552, 6.572742700960119, 15); return false;">cuddly peach barracuda</a></td>
+        <td>Groningen</td>
+        <td>41,25m</td>
+        <td>26€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(53.2140629323449, 6.561369648208671, 15); return false;">short stone porcupine</a></td>
+        <td>Groningen</td>
+        <td>41,25m</td>
+        <td>26€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.759474546404775, 4.824897461339846, 15); return false;">wild iron quail</a></td>
+        <td>Windmolen Kooy</td>
+        <td>40m</td>
+        <td>50.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.77023373436501, 4.997831600877234, 15); return false;">jovial ultraviolet stallion</a></td>
+        <td>Renze Bouthoorn, Middenmeer</td>
+        <td>50m</td>
+        <td>40.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.62139063578851, 5.014637374637322, 15); return false;">Large Rainbow Wombat</a></td>
+        <td>Scharwoude, Meerzicht</td>
+        <td>15m</td>
+        <td>50.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.45696317695836, 4.636722461962925, 15); return false;">huge frost bull</a></td>
+        <td>Minister van Houtenlaan 123, Velsen Zuid ZO</td>
+        <td>40m</td>
+        <td>25.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.76989180104615, 4.80442893542282, 15); return false;">petite pineapple dragonfly</a></td>
+        <td>Windmolen Wijnker</td>
+        <td>40m</td>
+        <td>50.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.75327074598391, 4.814399348653449, 15); return false;">howling iron platypus</a></td>
+        <td>Windmolen Stammes</td>
+        <td>40m</td>
+        <td>50.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(53.21957153756562, 6.559087171619826, 15); return false;">Energetic Licorice Giraffe</a></td>
+        <td>Groningen</td>
+        <td>41,25m</td>
+        <td>26€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.823040089920326, 4.898554795915774, 15); return false;">deep glossy chicken</a></td>
+        <td>Gerard Kistenmaker, Wieringenwaard</td>
+        <td>40m</td>
+        <td>40.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.86387115753095, 4.901411549734464, 15); return false;">silly pearl sidewinder</a></td>
+        <td>Klaas Schenk, Wieringenwaard</td>
+        <td>40m</td>
+        <td>40.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.84917789666923, 4.878716111206738, 15); return false;">fierce scarlet bull</a></td>
+        <td>Andre Bakker, Wieringenwaard</td>
+        <td>40m</td>
+        <td>40.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(53.22809686121506, 5.492654852782834, 15); return false;">curly olive squid</a></td>
+        <td>Jasper Nammensma, Sexbierum</td>
+        <td>50M</td>
+        <td>40.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.87600189603914, 4.828360460072845, 15); return false;">radiant seaweed gerbil</a></td>
+        <td>Peter Keppel, Anna Paulowna</td>
+        <td>40m</td>
+        <td>40.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.26764176963716, 6.167486552076289, 15); return false;">Basic Fuchsia Shark</a></td>
+        <td>Go Ahead</td>
+        <td>45M</td>
+        <td>50€ per maand totaal, 3 jaar vooruit</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.77955206646418, 5.020879067446549, 15); return false;">long fuzzy sealion</a></td>
+        <td>Bernard Kadijk, Middenmeer</td>
+        <td>40m</td>
+        <td>40.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(53.2219491728988, 6.568978674319656, 15); return false;">Careful Powder Cougar</a></td>
+        <td>Groningen</td>
+        <td>41,25m</td>
+        <td>26€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.33997402966207, 6.656601274507292, 15); return false;">Quiet brick mole</a></td>
+        <td>Heracles</td>
+        <td>40m</td>
+        <td>40.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.33841697416248, 6.650320403126308, 15); return false;">Chilly peanut bear</a></td>
+        <td>Heracles</td>
+        <td>40m</td>
+        <td>40.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.3401119881791, 6.649416768586134, 15); return false;">Brisk pebble whale</a></td>
+        <td>Heracles</td>
+        <td>40m</td>
+        <td>40.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.33726187316848, 6.649465001693377, 15); return false;">Bubbly Red Barbel</a></td>
+        <td>Heracles</td>
+        <td>40m</td>
+        <td>40.00%</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.64878667616279, 5.042435102300247, 15); return false;">Brisk myrtle koala</a></td>
+        <td>Valk Hoorn</td>
+        <td>50m</td>
+        <td>46€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.65253372208243, 5.040320129854482, 15); return false;">Round paisley liger</a></td>
+        <td>Valk Hoorn</td>
+        <td>50m</td>
+        <td>46€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.65130080586344, 5.038557442445364, 15); return false;">mini marigold mammoth</a></td>
+        <td>Valk Hoorn</td>
+        <td>50m</td>
+        <td>46€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.65091597877469, 5.036070205468148, 15); return false;">Big viridian woodpecker</a></td>
+        <td>Valk Hoorn</td>
+        <td>50m</td>
+        <td>46€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(51.68489735196599, 5.295013173299773, 15); return false;">Melodic iris wasp</a></td>
+        <td>Den Bosch</td>
+        <td>50m</td>
+        <td>46€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(51.686642337913405, 5.307374387345075, 15); return false;">Blunt latte mouse</a></td>
+        <td>Den Bosch</td>
+        <td>50m</td>
+        <td>46€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(51.68565663493729, 5.301860149062482, 15); return false;">Oblong daffodil yeti</a></td>
+        <td>Den Bosch</td>
+        <td>50m</td>
+        <td>46€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(51.691548812651625, 5.303256212997495, 15); return false;">Strong teal ant</a></td>
+        <td>Den Bosch</td>
+        <td>50m</td>
+        <td>46€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(51.90088543428139, 5.436411757056813, 15); return false;">fluffy ocean dachshund</a></td>
+        <td>Valk tiel</td>
+        <td>50m</td>
+        <td>46€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(51.896597761380015, 5.435590193468972, 15); return false;">expert cream tadpole</a></td>
+        <td>Valk tiel</td>
+        <td>50m</td>
+        <td>46€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(51.89997695257364, 5.4318055038744415, 15); return false;">prehistoric rainbow pangolin</a></td>
+        <td>Valk tiel</td>
+        <td>50m</td>
+        <td>46€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(51.90671175020335, 5.430564027561977, 15); return false;">mammoth licorice griffin</a></td>
+        <td>Valk tiel</td>
+        <td>50m</td>
+        <td>46€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.6827651547453, 5.959236470769434, 15); return false;">proper cyan raven</a></td>
+        <td>Vollehove</td>
+        <td>30m</td>
+        <td>52€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.680965898609074, 5.965892695867389, 15); return false;">Glamorous Banana Grasshopper</a></td>
+        <td>Vollehove</td>
+        <td>30m</td>
+        <td>52€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(50.86175254456307, 6.0552018805108245, 15); return false;">Formal stone alpaca</a></td>
+        <td>Roda jc</td>
+        <td>50m</td>
+        <td>Nog te onderhandelen, was 30€ per maand</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(50.84919805637631, 6.070791935760612, 15); return false;">Slow ultraviolet Hippo</a></td>
+        <td>Roda jc</td>
+        <td>50m</td>
+        <td>Nog te onderhandelen, was 30€ per maand</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(50.85137188982792, 6.007995972672185, 15); return false;">Sneaky amethyst pangolin</a></td>
+        <td>Roda jc</td>
+        <td>50m</td>
+        <td>Nog te onderhandelen, was 30€ per maand</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(50.85764695526962, 6.005455977397571, 15); return false;">perfect latte caterpillar</a></td>
+        <td>Roda jc</td>
+        <td>50m</td>
+        <td>Nog te onderhandelen, was 30€ per maand</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.26938144209822, 6.179029390900666, 15); return false;">Lively Latte Stallion</a></td>
+        <td>Go Ahead</td>
+        <td>45M</td>
+        <td>50€ per maand, 3 jaar vooruit</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.26181474686983, 6.18066330993585, 15); return false;">Uneven crepe mantis</a></td>
+        <td>Go Ahead</td>
+        <td>45M</td>
+        <td>50€ per maand totaal, 3 jaar vooruit</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(50.91833974525617, 5.771291525543486, 15); return false;">Urban Coal alpaca</a></td>
+        <td>Maastricht Airport</td>
+        <td>20m</td>
+        <td>52€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(50.92483827314542, 5.780087080146979, 15); return false;">Small mustard falcon</a></td>
+        <td>Maastricht Airport</td>
+        <td>20m</td>
+        <td>52€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.16657466640583, 5.88846369413704, 15); return false;">Best daffodil Python</a></td>
+        <td>Ugchelen</td>
+        <td>80m</td>
+        <td>66€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.16459355000276, 5.862677243135157, 15); return false;">Energetic pebble pike</a></td>
+        <td>Ugchelen</td>
+        <td>80m</td>
+        <td>66€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.17082367537083, 5.949170873011634, 15); return false;">hot nylon beaver</a></td>
+        <td>Ugchelen</td>
+        <td>80m</td>
+        <td>66€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.19844360515312, 5.924433335028172, 15); return false;">real lace hornet</a></td>
+        <td>Ugchelen</td>
+        <td>80m</td>
+        <td>66€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.18856587809328, 5.9319873343470055, 15); return false;">cheesy indigo oyster</a></td>
+        <td>Ugchelen</td>
+        <td>80m</td>
+        <td>66€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.18514803954506, 5.947764679128515, 15); return false;">short smoke hawk</a></td>
+        <td>Ugchelen</td>
+        <td>80m</td>
+        <td>66€</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.254597396347954, 6.1605765539540425, 15); return false;">early mahogany fly</a></td>
+        <td>Go Ahead</td>
+        <td>45M</td>
+        <td>50€ per maand totaal, 3 jaar vooruit</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.25420533874794, 6.167883528927031, 15); return false;">atomic steel wolverine</a></td>
+        <td>Go Ahead</td>
+        <td>45M</td>
+        <td>50€ per maand totaal, 3 jaar vooruit</td>
+    </tr>
+    <tr>
+        <td><a href="javascript:void(0);" onclick="flyTo(52.24575112302152, 6.192992514288419, 15); return false;">quiet ivory python</a></td>
+        <td>Go Ahead</td>
+        <td>45M</td>
+        <td>50€ per maand totaal, 3 jaar vooruit</td>
+    </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="map"></div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiaGV4YXNwb3QiLCJhIjoiY2xnbnN5cWk1MGl5MjNyb2VudWZpeXF1bSJ9.6TkZlxe23xYmU3bxyYsLvg';
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/dark-v10',
+            center: [5, 52],  // Change to the average of your latitudes and longitudes if needed
+            zoom: 5,
+            antialias: true
+        });
+
+        map.on('load', function() {
+            var markers = [{'name': 'Cheesy Jade unicorn', 'locatienaam': 'Minister van Houtenlaan 123, Velsen Zuid NO', 'height': '40m', 'eigenaar': 'Bedrijf', 'kosten': '25.00%', 'latitude': 52.45445964083738, 'longitude': 4.635939364001738},{'name': 'decent pear ant', 'locatienaam': 'Grotewallerweg 2B, Schagen', 'height': '15m ', 'eigenaar': 'Bedrijf', 'kosten': '30.00%', 'latitude': 52.78232557925122, 'longitude': 4.808910514421889},{'name': 'cuddly peach barracuda', 'locatienaam': 'Groningen', 'height': '41,25m', 'eigenaar': 'Bedrijf', 'kosten': '26€', 'latitude': 53.21419657665552, 'longitude': 6.572742700960119},{'name': 'short stone porcupine', 'locatienaam': 'Groningen', 'height': '41,25m', 'eigenaar': 'Bedrijf', 'kosten': '26€', 'latitude': 53.2140629323449, 'longitude': 6.561369648208671},{'name': 'wild iron quail', 'locatienaam': 'Windmolen Kooy', 'height': '40m', 'eigenaar': 'Bedrijf', 'kosten': '50.00%', 'latitude': 52.759474546404775, 'longitude': 4.824897461339846},{'name': 'jovial ultraviolet stallion', 'locatienaam': 'Renze Bouthoorn, Middenmeer', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': '40.00%', 'latitude': 52.77023373436501, 'longitude': 4.997831600877234},{'name': 'Large Rainbow Wombat', 'locatienaam': 'Scharwoude, Meerzicht', 'height': '15m', 'eigenaar': 'Bedrijf', 'kosten': '50.00%', 'latitude': 52.62139063578851, 'longitude': 5.014637374637322},{'name': 'huge frost bull', 'locatienaam': 'Minister van Houtenlaan 123, Velsen Zuid ZO', 'height': '40m', 'eigenaar': 'Bedrijf', 'kosten': '25.00%', 'latitude': 52.45696317695836, 'longitude': 4.636722461962925},{'name': 'petite pineapple dragonfly', 'locatienaam': 'Windmolen Wijnker', 'height': '40m', 'eigenaar': 'Particulier', 'kosten': '50.00%', 'latitude': 52.76989180104615, 'longitude': 4.80442893542282},{'name': 'howling iron platypus', 'locatienaam': 'Windmolen Stammes', 'height': '40m', 'eigenaar': 'Particulier', 'kosten': '50.00%', 'latitude': 52.75327074598391, 'longitude': 4.814399348653449},{'name': 'Energetic Licorice Giraffe', 'locatienaam': 'Groningen', 'height': '41,25m', 'eigenaar': 'Bedrijf', 'kosten': '26€', 'latitude': 53.21957153756562, 'longitude': 6.559087171619826},{'name': 'deep glossy chicken', 'locatienaam': 'Gerard Kistenmaker, Wieringenwaard', 'height': '40m', 'eigenaar': 'Particulier', 'kosten': '40.00%', 'latitude': 52.823040089920326, 'longitude': 4.898554795915774},{'name': 'silly pearl sidewinder', 'locatienaam': 'Klaas Schenk, Wieringenwaard', 'height': '40m', 'eigenaar': 'Particulier', 'kosten': '40.00%', 'latitude': 52.86387115753095, 'longitude': 4.901411549734464},{'name': 'fierce scarlet bull', 'locatienaam': 'Andre Bakker, Wieringenwaard', 'height': '40m', 'eigenaar': 'Particulier', 'kosten': '40.00%', 'latitude': 52.84917789666923, 'longitude': 4.878716111206738},{'name': 'curly olive squid', 'locatienaam': 'Jasper Nammensma, Sexbierum', 'height': '50M', 'eigenaar': 'Particulier', 'kosten': '40.00%', 'latitude': 53.22809686121506, 'longitude': 5.492654852782834},{'name': 'radiant seaweed gerbil', 'locatienaam': 'Peter Keppel, Anna Paulowna', 'height': '40m', 'eigenaar': 'Particulier', 'kosten': '40.00%', 'latitude': 52.87600189603914, 'longitude': 4.828360460072845},{'name': 'Basic Fuchsia Shark', 'locatienaam': 'Go Ahead', 'height': '45M', 'eigenaar': 'Bedrijf', 'kosten': '50€ per maand totaal, 3 jaar vooruit', 'latitude': 52.26764176963716, 'longitude': 6.167486552076289},{'name': 'long fuzzy sealion', 'locatienaam': 'Bernard Kadijk, Middenmeer', 'height': '40m', 'eigenaar': 'Particulier', 'kosten': '40.00%', 'latitude': 52.77955206646418, 'longitude': 5.020879067446549},{'name': 'Careful Powder Cougar', 'locatienaam': 'Groningen', 'height': '41,25m', 'eigenaar': 'Bedrijf', 'kosten': '26€', 'latitude': 53.2219491728988, 'longitude': 6.568978674319656},{'name': 'Quiet brick mole', 'locatienaam': 'Heracles', 'height': '40m', 'eigenaar': 'Bedrijf', 'kosten': '40.00%', 'latitude': 52.33997402966207, 'longitude': 6.656601274507292},{'name': 'Chilly peanut bear', 'locatienaam': 'Heracles', 'height': '40m', 'eigenaar': 'Bedrijf', 'kosten': '40.00%', 'latitude': 52.33841697416248, 'longitude': 6.650320403126308},{'name': 'Brisk pebble whale', 'locatienaam': 'Heracles', 'height': '40m', 'eigenaar': 'Bedrijf', 'kosten': '40.00%', 'latitude': 52.3401119881791, 'longitude': 6.649416768586134},{'name': 'Bubbly Red Barbel', 'locatienaam': 'Heracles', 'height': '40m', 'eigenaar': 'Bedrijf', 'kosten': '40.00%', 'latitude': 52.33726187316848, 'longitude': 6.649465001693377},{'name': 'Brisk myrtle koala', 'locatienaam': 'Valk Hoorn', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': '46€', 'latitude': 52.64878667616279, 'longitude': 5.042435102300247},{'name': 'Round paisley liger', 'locatienaam': 'Valk Hoorn', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': '46€', 'latitude': 52.65253372208243, 'longitude': 5.040320129854482},{'name': 'mini marigold mammoth', 'locatienaam': 'Valk Hoorn', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': '46€', 'latitude': 52.65130080586344, 'longitude': 5.038557442445364},{'name': 'Big viridian woodpecker', 'locatienaam': 'Valk Hoorn', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': '46€', 'latitude': 52.65091597877469, 'longitude': 5.036070205468148},{'name': 'Melodic iris wasp', 'locatienaam': 'Den Bosch', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': '46€', 'latitude': 51.68489735196599, 'longitude': 5.295013173299773},{'name': 'Blunt latte mouse', 'locatienaam': 'Den Bosch', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': '46€', 'latitude': 51.686642337913405, 'longitude': 5.307374387345075},{'name': 'Oblong daffodil yeti', 'locatienaam': 'Den Bosch', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': '46€', 'latitude': 51.68565663493729, 'longitude': 5.301860149062482},{'name': 'Strong teal ant', 'locatienaam': 'Den Bosch', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': '46€', 'latitude': 51.691548812651625, 'longitude': 5.303256212997495},{'name': 'fluffy ocean dachshund', 'locatienaam': 'Valk tiel', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': '46€', 'latitude': 51.90088543428139, 'longitude': 5.436411757056813},{'name': 'expert cream tadpole', 'locatienaam': 'Valk tiel', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': '46€', 'latitude': 51.896597761380015, 'longitude': 5.435590193468972},{'name': 'prehistoric rainbow pangolin', 'locatienaam': 'Valk tiel', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': '46€', 'latitude': 51.89997695257364, 'longitude': 5.4318055038744415},{'name': 'mammoth licorice griffin', 'locatienaam': 'Valk tiel', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': '46€', 'latitude': 51.90671175020335, 'longitude': 5.430564027561977},{'name': 'proper cyan raven', 'locatienaam': 'Vollehove', 'height': '30m', 'eigenaar': 'Bedrijf', 'kosten': '52€', 'latitude': 52.6827651547453, 'longitude': 5.959236470769434},{'name': 'Glamorous Banana Grasshopper', 'locatienaam': 'Vollehove', 'height': '30m', 'eigenaar': 'Bedrijf', 'kosten': '52€', 'latitude': 52.680965898609074, 'longitude': 5.965892695867389},{'name': 'Formal stone alpaca', 'locatienaam': 'Roda jc', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': 'Nog te onderhandelen, was 30€ per maand', 'latitude': 50.86175254456307, 'longitude': 6.0552018805108245},{'name': 'Slow ultraviolet Hippo', 'locatienaam': 'Roda jc', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': 'Nog te onderhandelen, was 30€ per maand', 'latitude': 50.84919805637631, 'longitude': 6.070791935760612},{'name': 'Sneaky amethyst pangolin', 'locatienaam': 'Roda jc', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': 'Nog te onderhandelen, was 30€ per maand', 'latitude': 50.85137188982792, 'longitude': 6.007995972672185},{'name': 'perfect latte caterpillar', 'locatienaam': 'Roda jc', 'height': '50m', 'eigenaar': 'Bedrijf', 'kosten': 'Nog te onderhandelen, was 30€ per maand', 'latitude': 50.85764695526962, 'longitude': 6.005455977397571},{'name': 'Lively Latte Stallion', 'locatienaam': 'Go Ahead', 'height': '45M', 'eigenaar': 'Bedrijf', 'kosten': '50€ per maand, 3 jaar vooruit', 'latitude': 52.26938144209822, 'longitude': 6.179029390900666},{'name': 'Uneven crepe mantis', 'locatienaam': 'Go Ahead', 'height': '45M', 'eigenaar': 'Bedrijf', 'kosten': '50€ per maand totaal, 3 jaar vooruit', 'latitude': 52.26181474686983, 'longitude': 6.18066330993585},{'name': 'Urban Coal alpaca', 'locatienaam': 'Maastricht Airport', 'height': '20m', 'eigenaar': 'Bedrijf', 'kosten': '52€', 'latitude': 50.91833974525617, 'longitude': 5.771291525543486},{'name': 'Small mustard falcon', 'locatienaam': 'Maastricht Airport', 'height': '20m', 'eigenaar': 'Bedrijf', 'kosten': '52€', 'latitude': 50.92483827314542, 'longitude': 5.780087080146979},{'name': 'Best daffodil Python', 'locatienaam': 'Ugchelen', 'height': '80m', 'eigenaar': 'Bedrijf', 'kosten': '66€', 'latitude': 52.16657466640583, 'longitude': 5.88846369413704},{'name': 'Energetic pebble pike', 'locatienaam': 'Ugchelen', 'height': '80m', 'eigenaar': 'Bedrijf', 'kosten': '66€', 'latitude': 52.16459355000276, 'longitude': 5.862677243135157},{'name': 'hot nylon beaver', 'locatienaam': 'Ugchelen', 'height': '80m', 'eigenaar': 'Bedrijf', 'kosten': '66€', 'latitude': 52.17082367537083, 'longitude': 5.949170873011634},{'name': 'real lace hornet', 'locatienaam': 'Ugchelen', 'height': '80m', 'eigenaar': 'Bedrijf', 'kosten': '66€', 'latitude': 52.19844360515312, 'longitude': 5.924433335028172},{'name': 'cheesy indigo oyster', 'locatienaam': 'Ugchelen', 'height': '80m', 'eigenaar': 'Bedrijf', 'kosten': '66€', 'latitude': 52.18856587809328, 'longitude': 5.9319873343470055},{'name': 'short smoke hawk', 'locatienaam': 'Ugchelen', 'height': '80m', 'eigenaar': 'Bedrijf', 'kosten': '66€', 'latitude': 52.18514803954506, 'longitude': 5.947764679128515},{'name': 'early mahogany fly', 'locatienaam': 'Go Ahead', 'height': '45M', 'eigenaar': 'Bedrijf', 'kosten': '50€ per maand totaal, 3 jaar vooruit', 'latitude': 52.254597396347954, 'longitude': 6.1605765539540425},{'name': 'atomic steel wolverine', 'locatienaam': 'Go Ahead', 'height': '45M', 'eigenaar': 'Bedrijf', 'kosten': '50€ per maand totaal, 3 jaar vooruit', 'latitude': 52.25420533874794, 'longitude': 6.167883528927031},{'name': 'quiet ivory python', 'locatienaam': 'Go Ahead', 'height': '45M', 'eigenaar': 'Bedrijf', 'kosten': '50€ per maand totaal, 3 jaar vooruit', 'latitude': 52.24575112302152, 'longitude': 6.192992514288419}];
+    
+    markers.forEach(function(marker) {
+    new mapboxgl.Marker()
+        .setLngLat([marker.longitude, marker.latitude])
+        .setPopup(new mapboxgl.Popup({offset: 25})
+        .setHTML(`<strong>${marker.name}</strong><br>Location Name: ${marker.locatienaam}<br>Height: ${marker.height}<br>Owner: ${marker.eigenaar}<br>Cost/month: ${marker.kosten}`))
+        .addTo(map);
+});
+
+
+            map.addLayer({
+    'id': '3d-buildings',
+    'source': 'composite',
+    'source-layer': 'building',
+    'filter': ['==', 'extrude', 'true'],
+    'type': 'fill-extrusion',
+    'minzoom': 15,
+    'paint': {
+        'fill-extrusion-color': '#aaa',
+        'fill-extrusion-height': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            15,
+            0,
+            15.05,
+            ['get', 'height']
+        ],
+        'fill-extrusion-base': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            15,
+            0,
+            15.05,
+            ['get', 'min_height']
+        ],
+        'fill-extrusion-opacity': 0.6
+    }
+});
+        });
+
+        function flyTo(lat, lng, zoom) {
+            map.flyTo({
+                center: [lng, lat],
+                zoom: zoom
+            });
+        }
+    </script>
+</body>
+</html>
