@@ -11,7 +11,7 @@
         body, html { height: 100%; margin: 0; font-family: Arial, sans-serif; }
         #map { position: absolute; top: 0; bottom: 0; left: 500px; width: calc(100% - 500px); background-color: #191A1A;}
         #sidebar { width: 500px; background-color: #2C2C2C; position: absolute; top: 0; bottom: 0; left: 0; overflow: auto; z-index: 2; box-shadow: 2px 0px 10px rgba(0,0,0,0.5);}
-        #sidebar h4 { padding: 20px; background-color: #4CAF50; color: #FFF; margin: 0; }
+        #sidebar h4, h5 { padding: 20px; background-color: #4CAF50; color: #FFF; margin: 0; }
         #sidebar .counter { padding: 10px 20px; background-color: #3C3C3C; border-bottom: 1px solid #444; font-size: 14px; color: #ddd; }
         #sidebar a { color: #4CAF50; text-decoration: none; }  /* Style for the links in sidebar */
         #sidebar a:hover { text-decoration: underline; }  /* Hover effect for the links in sidebar */
@@ -22,6 +22,7 @@
 <body>
     <div id="sidebar">
         <h4>Hotspots</h4>
+        <a href="locations.html"><h5 style="text-decoration: underline!important;">GO TO LOCATIONS</h5></a>
         <div class="counter">Total Hotspots: 54</div>
         <table border="1" cellspacing="0" cellpadding="5" width="100%">
             <thead>
